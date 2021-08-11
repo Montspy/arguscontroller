@@ -27,6 +27,9 @@
 #define PIN_TEMPSENSOR_3 A2
 #define PIN_TEMPSENSOR_4 A3
 
+//#define NTC_TO_GROUND          // Activate if NTC is on GND side (de-activate if NTC is on Vcc side)
+//#define NTC_USE_EXTERNAL_REF   // Activate if NTC resistive bridge is referenced to AREF
+
 #define FAN_COUNT 2
 
 //#define DEBUG_OUTPUT    // print some debug output via serial port
