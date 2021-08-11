@@ -13,6 +13,8 @@
 #ifndef _FANCTRL_H_
 #define _FANCTRL_H_
 
+#define PIN_EN_FAN1 5
+#define PIN_EN_FAN2 6
 #define PIN_PWM_FAN1 9     // OC1A
 #define PIN_PWM_FAN2 10    // OC1B
 #define PIN_TACH_FAN1 2    // INT0
@@ -39,6 +41,8 @@ public:
             digitalWrite(PIN_TACH_FAN1, HIGH);
             attachInterrupt(digitalPinToInterrupt(PIN_TACH_FAN1), isr_fan1, FALLING);
             pinMode(PIN_PWM_FAN1, OUTPUT);
+            pinMode(PIN_EN_FAN1, OUTPUT);
+            digitalWrite(PIN_EN_FAN1, HIGH);
 
             TCCR1A = 1 << WGM11 | 1 << COM1A1 | 1 << COM1B1;    // PWM, PhaseCorrect, 0..ICR1 counting
             TCCR1B = 1 << CS10 | 1 << WGM13;                    // clk/1
@@ -50,6 +54,8 @@ public:
                 digitalWrite(PIN_TACH_FAN2, HIGH);
                 attachInterrupt(digitalPinToInterrupt(PIN_TACH_FAN2), isr_fan2, FALLING);
                 pinMode(PIN_PWM_FAN2, OUTPUT);
+                pinMode(PIN_EN_FAN2, OUTPUT);
+                digitalWrite(PIN_EN_FAN2, HIGH);
 
                 OCR1B = 160;    // fan1 50%
             }
