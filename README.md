@@ -1,3 +1,14 @@
+# Fork of ArgusMonotir's Fan controller "Argus Controller"
+
+
+## Description of fork
+
+This fork intends to adapt the Argus Controller code to my MiniFanController hardware, including:
+
+- Support for 2x fan channels supporting 3 or 4-pin fans (and detection)
+- Support for 1x NTC temperature sensor (used for water temperature sensing)
+
+
 # Argus Controller
 
 <p align="center"><img src="Images/ArgusController_140.png?raw=true"/></p>
@@ -6,8 +17,7 @@
 - We call these devices Argus Controller.
 - At least Argus Monitor version 5.0.4 is required for these.
 
-
-## Description
+## Description of original repo
 
 We have made an [example](ArduinoNanoExample1) to demonstrate such a device with the help of the very common Arduino Nano or Arduino Uno platform.<br>
 The example demonstrates the creation and set-up of temperature channels and fan control channels.<br>
